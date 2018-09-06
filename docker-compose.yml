@@ -1,0 +1,6 @@
+main:
+  build: .
+  environment:
+    PYTHONUNBUFFERED: 0
+  volumes:
+    - .:/opt/code
