@@ -1,1 +1,3 @@
 data/html/*.htm*
+__pycache__
+.pytest_cache/
