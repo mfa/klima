@@ -27,3 +27,15 @@ def parse_lubw(html_string):
         if len(data.keys()) > 2:
             elements.append(data)
     return elements
+
+
+def parse_stadtklima_stgt(html_string):
+    soup = BeautifulSoup(html_string, 'html.parser')
+    for row in soup.find(id="contentarea").find_all('tr'):
+        for element in row.find_all('td'):
+            if element.attrs.get('align') == 'right':
+                print('right: ', element.text.strip())
+            if element.attrs.get('align') == 'left':
+                print('left: ', element.text.strip())
+            if element.attrs.get('align') == 'center':
+                print('center: ', element.text.strip())
