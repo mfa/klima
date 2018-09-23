@@ -23,3 +23,9 @@ if [ "$1" == "download" ]; then
     python downloader.py
     cd -
 fi
+
+if [ "$1" == "parse" ]; then
+    cd klima
+    python parsers.py
+    cd -
+fi

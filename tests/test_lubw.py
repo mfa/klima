@@ -11,7 +11,8 @@ def lubw_fixture():
 
 def test_lubw(lubw_fixture):
     result = parse_lubw(lubw_fixture)
-    assert len(result) == 5
-    assert result[0]['name'] == 'Eggenstein'
-    assert result[0]['component'] == 'Feinstaub (PM10)'
-    assert result[-1]['maximum_value'] == '17'
+    assert len(result) == 3
+    assert len(result['items']) == 5
+    assert result['name'] == 'Eggenstein'
+    assert result['items'][0]['component'] == 'Feinstaub (PM10)'
+    assert result['items'][-1]['maximum_value'] == '17'

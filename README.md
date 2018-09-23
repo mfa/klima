@@ -3,7 +3,14 @@
 ### run downloader
 
 ```
-dc run main download
+docker-compose run main download
+```
+
+
+### run parsers
+
+```
+docker-compose run main parse
 ```
 
 
@@ -12,3 +19,13 @@ dc run main download
 ```
 17 * * * * ~/klima/cron_downloader.sh > /dev/null 2>&1
 ```
+
+
+### development
+
+#### run tests
+
+```
+docker-compose run main tests
+```
+
