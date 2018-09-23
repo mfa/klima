@@ -94,7 +94,7 @@ def parse_stadtklima_stgt(html_string):
 def parse_folder(folder='/opt/code/data/html/'):
     done_folder = Path('/opt/code/data/done')
     done_folder.mkdir(parents=True, exist_ok=True)
-    for item in Path(folder).glob('*.htm'):
+    for item in sorted(Path(folder).glob('*.htm')):
         data = None
         if 'statDE' in item.name:
             prefix = 'lubw'
