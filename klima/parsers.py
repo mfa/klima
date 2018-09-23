@@ -101,7 +101,7 @@ def parse_folder(folder='/opt/code/data/html/'):
             prefix = 'lubw'
             try:
                 data = parse_lubw(item.open('rb').read())
-            except AttributeError:
+            except (AttributeError, ValueError):
                 pass
         if 'Mitte--Schwabenzentrum' in item.name:
             prefix = 'stuttgart'
