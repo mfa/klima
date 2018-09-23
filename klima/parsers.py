@@ -99,7 +99,10 @@ def parse_folder(folder='/opt/code/data/html/'):
         data = None
         if 'statDE' in item.name:
             prefix = 'lubw'
-            data = parse_lubw(item.open('rb').read())
+            try:
+                data = parse_lubw(item.open('rb').read())
+            except AttributeError:
+                pass
         if 'Mitte--Schwabenzentrum' in item.name:
             prefix = 'stuttgart'
             data = parse_stadtklima_stgt(item.open('rb').read())
