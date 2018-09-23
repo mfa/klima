@@ -11,7 +11,8 @@ def parse_lubw(html_string):
     name = soup.find(id="Name").text
     name = name.replace('(vorläufige Daten)', '').replace('\xa0', ' ')
     name = name.replace('(V)', '').replace('*)', '').strip()
-    date = datetime.datetime.strptime(soup.find(id="Datum").text.strip(), '%d.%m.%Y %H:%M')
+    date_string = soup.find(id="Datum").text.replace('Â', '').replace('\xa0', ' ').strip()
+    date = datetime.datetime.strptime(date_string, '%d.%m.%Y %H:%M')
     last_component = ''
     elements = []
     data = {
